@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: WP Admin Sticky Notes
- * Plugin URI:  https://github.com/mcampal/wp-admin-sticky-notes
+ * Plugin Name: Admin Sticky Notes
+ * Plugin URI:  https://github.com/mcampal/admin-sticky-notes
  * Description: Place persistent sticky notes anywhere in the WordPress admin.
  * Version:     1.0.0
  * Author:      mcampal
  * License:     GPL-2.0-or-later
- * Text Domain: wp-admin-sticky-notes
+ * Text Domain: admin-sticky-notes
  */
 
 defined( 'ABSPATH' ) || exit;

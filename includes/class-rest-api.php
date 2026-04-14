@@ -245,7 +245,7 @@ class WASN_REST_API {
 		$post    = get_post( $post_id );
 
 		if ( ! $post || 'admin_sticky_note' !== $post->post_type ) {
-			return new WP_REST_Response( array( 'message' => __( 'Note not found.', 'wp-admin-sticky-notes' ) ), 404 );
+			return new WP_REST_Response( array( 'message' => __( 'Note not found.', 'admin-sticky-notes' ) ), 404 );
 		}
 
 		$content = $request->get_param( 'content' );
@@ -274,7 +274,7 @@ class WASN_REST_API {
 		$post    = get_post( $post_id );
 
 		if ( ! $post || 'admin_sticky_note' !== $post->post_type ) {
-			return new WP_REST_Response( array( 'message' => __( 'Note not found.', 'wp-admin-sticky-notes' ) ), 404 );
+			return new WP_REST_Response( array( 'message' => __( 'Note not found.', 'admin-sticky-notes' ) ), 404 );
 		}
 
 		wp_delete_post( $post_id, true );
@@ -289,7 +289,7 @@ class WASN_REST_API {
 		$post    = get_post( $post_id );
 
 		if ( ! $post || 'admin_sticky_note' !== $post->post_type ) {
-			return new WP_REST_Response( array( 'message' => __( 'Note not found.', 'wp-admin-sticky-notes' ) ), 404 );
+			return new WP_REST_Response( array( 'message' => __( 'Note not found.', 'admin-sticky-notes' ) ), 404 );
 		}
 
 		$user_id   = get_current_user_id();

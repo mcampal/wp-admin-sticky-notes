@@ -26,17 +26,17 @@ class WASN_Notes_CPT {
 	 */
 	public static function register_cpt() {
 		$labels = array(
-			'name'               => _x( 'Sticky Notes', 'post type general name', 'wp-admin-sticky-notes' ),
-			'singular_name'      => _x( 'Sticky Note', 'post type singular name', 'wp-admin-sticky-notes' ),
-			'menu_name'          => __( 'Sticky Notes', 'wp-admin-sticky-notes' ),
-			'add_new'            => __( 'Add New', 'wp-admin-sticky-notes' ),
-			'add_new_item'       => __( 'Add New Note', 'wp-admin-sticky-notes' ),
-			'edit_item'          => __( 'Edit Note', 'wp-admin-sticky-notes' ),
-			'new_item'           => __( 'New Note', 'wp-admin-sticky-notes' ),
-			'view_item'          => __( 'View Note', 'wp-admin-sticky-notes' ),
-			'search_items'       => __( 'Search Notes', 'wp-admin-sticky-notes' ),
-			'not_found'          => __( 'No notes found.', 'wp-admin-sticky-notes' ),
-			'not_found_in_trash' => __( 'No notes found in Trash.', 'wp-admin-sticky-notes' ),
+			'name'               => _x( 'Sticky Notes', 'post type general name', 'admin-sticky-notes' ),
+			'singular_name'      => _x( 'Sticky Note', 'post type singular name', 'admin-sticky-notes' ),
+			'menu_name'          => __( 'Sticky Notes', 'admin-sticky-notes' ),
+			'add_new'            => __( 'Add New', 'admin-sticky-notes' ),
+			'add_new_item'       => __( 'Add New Note', 'admin-sticky-notes' ),
+			'edit_item'          => __( 'Edit Note', 'admin-sticky-notes' ),
+			'new_item'           => __( 'New Note', 'admin-sticky-notes' ),
+			'view_item'          => __( 'View Note', 'admin-sticky-notes' ),
+			'search_items'       => __( 'Search Notes', 'admin-sticky-notes' ),
+			'not_found'          => __( 'No notes found.', 'admin-sticky-notes' ),
+			'not_found_in_trash' => __( 'No notes found in Trash.', 'admin-sticky-notes' ),
 		);
 
 		$args = array(
@@ -125,8 +125,8 @@ class WASN_Notes_CPT {
 			return;
 		}
 		add_options_page(
-			__( 'Sticky Notes', 'wp-admin-sticky-notes' ),
-			__( 'Sticky Notes', 'wp-admin-sticky-notes' ),
+			__( 'Sticky Notes', 'admin-sticky-notes' ),
+			__( 'Sticky Notes', 'admin-sticky-notes' ),
 			'read',
 			'wasn-sticky-notes',
 			array( __CLASS__, 'render_admin_page' )
@@ -142,7 +142,7 @@ class WASN_Notes_CPT {
 	 */
 	public static function render_admin_page() {
 		if ( ! WASN_Plugin::user_can_manage() ) {
-			wp_die( esc_html__( 'You do not have permission to view this page.', 'wp-admin-sticky-notes' ) );
+			wp_die( esc_html__( 'You do not have permission to view this page.', 'admin-sticky-notes' ) );
 		}
 
 		// Cap at 200 rows; add pagination if this ever becomes a problem.
@@ -160,21 +160,21 @@ class WASN_Notes_CPT {
 
 		?>
 		<div class="wrap">
-			<h1><?php esc_html_e( 'Sticky Notes', 'wp-admin-sticky-notes' ); ?></h1>
-			<p><?php esc_html_e( 'All sticky notes currently placed in the admin.', 'wp-admin-sticky-notes' ); ?></p>
+			<h1><?php esc_html_e( 'Sticky Notes', 'admin-sticky-notes' ); ?></h1>
+			<p><?php esc_html_e( 'All sticky notes currently placed in the admin.', 'admin-sticky-notes' ); ?></p>
 
 			<?php if ( empty( $notes ) ) : ?>
-				<p><?php esc_html_e( 'No notes yet. Visit any admin page and click "➕ Add Note" to create one.', 'wp-admin-sticky-notes' ); ?></p>
+				<p><?php esc_html_e( 'No notes yet. Visit any admin page and click "➕ Add Note" to create one.', 'admin-sticky-notes' ); ?></p>
 			<?php else : ?>
 				<table class="wp-list-table widefat fixed striped">
 					<thead>
 						<tr>
-							<th><?php esc_html_e( 'Note', 'wp-admin-sticky-notes' ); ?></th>
-							<th><?php esc_html_e( 'Color', 'wp-admin-sticky-notes' ); ?></th>
-							<th><?php esc_html_e( 'Page', 'wp-admin-sticky-notes' ); ?></th>
-							<th><?php esc_html_e( 'Author', 'wp-admin-sticky-notes' ); ?></th>
-							<th><?php esc_html_e( 'Date', 'wp-admin-sticky-notes' ); ?></th>
-							<th><?php esc_html_e( 'Actions', 'wp-admin-sticky-notes' ); ?></th>
+							<th><?php esc_html_e( 'Note', 'admin-sticky-notes' ); ?></th>
+							<th><?php esc_html_e( 'Color', 'admin-sticky-notes' ); ?></th>
+							<th><?php esc_html_e( 'Page', 'admin-sticky-notes' ); ?></th>
+							<th><?php esc_html_e( 'Author', 'admin-sticky-notes' ); ?></th>
+							<th><?php esc_html_e( 'Date', 'admin-sticky-notes' ); ?></th>
+							<th><?php esc_html_e( 'Actions', 'admin-sticky-notes' ); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -205,7 +205,7 @@ class WASN_Notes_CPT {
 								<td>
 									<button class="button button-small wasn-delete-note"
 										data-id="<?php echo esc_attr( $note->ID ); ?>">
-										<?php esc_html_e( 'Delete', 'wp-admin-sticky-notes' ); ?>
+										<?php esc_html_e( 'Delete', 'admin-sticky-notes' ); ?>
 									</button>
 								</td>
 							</tr>
