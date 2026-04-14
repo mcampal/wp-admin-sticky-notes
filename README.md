@@ -1,8 +1,8 @@
-# WP Admin Sticky Notes
+# Admin Sticky Notes
 
 Place persistent sticky notes anywhere in the WordPress admin — anchored to specific page elements, visible to your whole team.
 
-![WP Admin Sticky Notes demo](assets/images/demo.gif)
+![Admin Sticky Notes demo](assets/images/demo.gif)
 
 ---
 
